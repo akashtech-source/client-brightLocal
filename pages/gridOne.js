@@ -1,28 +1,34 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-function Admin() {
+const GridOne = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const [imageURL, setImageURL] = useState(null);
-
+    const [imageURL, setImageURL]  = useState(null)
+    
     const onSubmit = data => {
-        const partnerData = {
-            name: data.name,
+        const grid1Data = {
+            title: data.title,
+            slogan: data.slogan,
+            bullet1: data.bullet1,
+            bullet2: data.bullet2,
+            bullet3: data.bullet3,
+            bullet4: data.bullet4,
             imageURL: imageURL
         };
-        const url = `http://localhost:5000/addPartner`
+        const url = `http://localhost:5000/addGrid1`
 
-        console.log(partnerData)
+        console.log(grid1Data)
         fetch(url, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(partnerData)
+            body: JSON.stringify(grid1Data)
         })
         .then(res => console.log('server side response', res))
-    };
+    }
 
     const handleLogoUpload = event => {
         console.log(event.target.files[0]);
@@ -38,12 +44,23 @@ function Admin() {
           .catch(function (error) {
             console.log(error);
           });
+        
     }
     return (
         <div>
-            <h1>This is Section 1</h1>
+            <h1>This is tool section</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input className="form-control" defaultValue="Service Name" {...register("name")} />
+                <input className="form-control" defaultValue="Title" {...register("title")} />
+                    <br/>
+                <input className="form-control" defaultValue="Slogan" {...register("slogan")} />
+                    <br/>
+                <input className="form-control" defaultValue="Bullet 1" {...register("bullet1")} />
+                    <br/>
+                <input className="form-control" defaultValue="Bullet 2" {...register("bullet2")} />
+                    <br/>
+                <input className="form-control" defaultValue="Bullet 3" {...register("bullet3")} />
+                    <br/>
+                <input className="form-control" defaultValue="Bullet 4" {...register("bullet4")} />
                     <br/>
                 
                 <input className="form-control"  type="file" onChange={handleLogoUpload}  />
@@ -53,6 +70,6 @@ function Admin() {
             </form>
         </div>
     );
-}
+};
 
-export default Admin;
+export default GridOne;

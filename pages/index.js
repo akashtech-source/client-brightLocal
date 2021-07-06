@@ -1,7 +1,9 @@
 import Head from 'next/head'
+import GridOne from '../components/Homepage/GridOne/GridOne'
 import HeroImage from '../components/Homepage/HeroImage/HeroImage'
 import HeroSection from '../components/Homepage/HeroSection/HeroSection'
 import Navbar from '../components/Homepage/Navbar/Navbar'
+import OurTools from '../components/Homepage/OurTools/OurTools'
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <Navbar />
       <HeroSection />
       <HeroImage />
+      <OurTools />
+      <GridOne />
     </div>
   )
 }

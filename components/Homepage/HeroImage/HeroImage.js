@@ -1,15 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import heroImg from '../../../public/SEO-Tools-BrightLocal (1).png';
 import { Typography, makeStyles, Grid } from '@material-ui/core';
-import hilton from '../../../public/hilton-1.png';
-import ikea from '../../../public/ikea.png';
-import nandos from '../../../public/nandos.png';
-import valvo from '../../../public/valvoline-1.png';
-import roto from '../../../public/roto-rooter.png';
-import iPropspect from '../../../public/iprospect.png';
+import { useEffect } from 'react';
+import PartnerData from './PartnerData';
+
 
 const useStyles = makeStyles({
+    
+
     heroTxt: {
         marginTop: '80px',
         fontWeight: 600,
@@ -20,6 +19,13 @@ const useStyles = makeStyles({
 })
 
 const HeroImage = () => {
+    const [partners, setPartners] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5000/partners')
+        .then(res => res.json())
+        .then(data => setPartners(data))
+    }, [])
     const classes = useStyles();
 
     return (
@@ -31,28 +37,8 @@ const HeroImage = () => {
             >
             Trusted by top brands, local businesses, and agencies alike
             </Typography>
-            <Grid container
-            className={classes.allImg}
-            >
-                <Grid item lg={2}>
-                    <Image src={hilton} alt="hilton"></Image> 
-                </Grid>
-                <Grid item lg={2}>
-                    <Image src={ikea} alt="hilton"></Image> 
-                </Grid>
-                <Grid item lg={2}>
-                    <Image src={nandos} alt="hilton"></Image> 
-                </Grid>
-                <Grid item lg={2}>
-                    <Image src={valvo} alt="hilton"></Image> 
-                </Grid>
-                <Grid item lg={2}>
-                    <Image src={roto} alt="hilton"></Image> 
-                </Grid>
-                <Grid item lg={2}>
-                    <Image src={iPropspect} alt="hilton"></Image> 
-                </Grid>
-            </Grid>
+            <PartnerData partners={partners} />
+            
         </div>
     );
 };

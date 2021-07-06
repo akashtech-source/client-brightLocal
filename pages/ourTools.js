@@ -1,28 +1,32 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
-function Admin() {
+const OurTools = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const [imageURL, setImageURL] = useState(null);
-
+    const [imageURL, setImageURL]  = useState(null)
+    
     const onSubmit = data => {
-        const partnerData = {
+        const reviewData = {
             name: data.name,
+            quote: data.quote,
+            position: data.position,
+            company: data.company,
             imageURL: imageURL
         };
-        const url = `http://localhost:5000/addPartner`
+        const url = `http://localhost:5000/addReview`
 
-        console.log(partnerData)
+        console.log(reviewData)
         fetch(url, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(partnerData)
+            body: JSON.stringify(reviewData)
         })
         .then(res => console.log('server side response', res))
-    };
+    }
 
     const handleLogoUpload = event => {
         console.log(event.target.files[0]);
@@ -38,12 +42,19 @@ function Admin() {
           .catch(function (error) {
             console.log(error);
           });
+        
     }
     return (
         <div>
-            <h1>This is Section 1</h1>
+            <h1>This is tool section</h1>
             <form onSubmit={handleSubmit(onSubmit)}>
-                <input className="form-control" defaultValue="Service Name" {...register("name")} />
+                <input className="form-control" defaultValue="Quote" {...register("quote")} />
+                    <br/>
+                <input className="form-control" defaultValue="Name" {...register("name")} />
+                    <br/>
+                <input className="form-control" defaultValue="Position" {...register("position")} />
+                    <br/>
+                <input className="form-control" defaultValue="Company" {...register("company")} />
                     <br/>
                 
                 <input className="form-control"  type="file" onChange={handleLogoUpload}  />
@@ -53,6 +64,6 @@ function Admin() {
             </form>
         </div>
     );
-}
+};
 
-export default Admin;
+export default OurTools;

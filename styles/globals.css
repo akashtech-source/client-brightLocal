@@ -46,3 +46,18 @@ a {
   background-repeat: no-repeat;
   padding: 30px;
 }
+.ceo {
+  padding: 15px;
+  height: 100%;
+  position: relative;
+  left: 60px;
+  top: 30px;
+
+}
+.headerOne {
+  font-size: 35px;
+}
+.tool-container {
+  background-color: rgb(243, 243, 252);
+  padding: 40px;
+}
