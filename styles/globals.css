@@ -14,3 +14,35 @@ a {
 * {
   box-sizing: border-box;
 }
+.nav-container {
+  display: flex;
+  margin-left: 60px;
+}
+.btn-brand {
+  background-color: #a5c559;
+  color: white;
+  height: 100%;
+  width: max-content;
+  padding: 17px;
+  font-weight: 700;
+  font-family: 'Helvetica' sans-serif;
+  border: 1px solid #a5c559;
+  border-radius: 30px;
+  font-size: 15px;
+  margin-top: 40px;
+}
+.btn-brand:hover {
+  box-shadow: 0 2px 3px 0 #657a36,
+  inset 0 -1px 0 0 rgb(163 197 89 / 34%);
+  transition: box-shadow .15s ease-in-out,transform .15s ease-in-out;
+  cursor: pointer;
+}
+.slogan {
+  color: #549fba;
+}
+.hero-image {
+  background-image: url(../public/Insights-graph.svg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 30px;
+}
