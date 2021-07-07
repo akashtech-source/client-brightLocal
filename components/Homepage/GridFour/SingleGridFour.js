@@ -3,12 +3,16 @@ import Image from 'next/image';
 import { Grid, Typography } from '@material-ui/core';
 
 
-const SingleGridOne = ({gridData}) => {
+const SingleGridFour = ({gridData}) => {
     console.log(gridData)
     return (
         <div style={{padding: '100px'}}>
             <Grid container>
                 <Grid item lg={6} style={{marginTop: '50px'}}>
+                <Image src={gridData.imageURL} height="500px" width="700px" alt="header-image"></Image>
+                </Grid>
+                <Grid item lg={6}>
+                    
                     <h4
                     style={{color: '#A5C559', marginLeft: '20px'}}
                     >
@@ -30,12 +34,9 @@ const SingleGridOne = ({gridData}) => {
                         START YOUR 14 DAY FREE TRIAL
                     </button>
                 </Grid>
-                <Grid item lg={6}>
-                    <Image src={gridData.imageURL} height="500px" width="700px" alt="header-image"></Image>
-                </Grid>
             </Grid>
         </div>
     );
 };
 
-export default SingleGridOne;
+export default SingleGridFour;

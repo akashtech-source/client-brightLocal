@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { Grid, Typography } from '@material-ui/core';
 
 
-const SingleGridOne = ({gridData}) => {
+const SingleGridThree = ({gridData}) => {
     console.log(gridData)
     return (
         <div style={{padding: '100px'}}>
@@ -38,4 +38,4 @@ const SingleGridOne = ({gridData}) => {
     );
 };
 
-export default SingleGridOne;
+export default SingleGridThree;

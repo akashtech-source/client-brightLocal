@@ -7,8 +7,12 @@ const SingleGridOne = ({gridData}) => {
     console.log(gridData)
     return (
         <div style={{padding: '100px'}}>
-            <Grid container>
+            <Grid container spacing={4}>
                 <Grid item lg={6} style={{marginTop: '50px'}}>
+                <Image src={gridData.imageURL} height="500px" width="700px" alt="header-image"></Image>
+                </Grid>
+                <Grid item lg={6}>
+                    
                     <h4
                     style={{color: '#A5C559', marginLeft: '20px'}}
                     >
@@ -29,9 +33,6 @@ const SingleGridOne = ({gridData}) => {
                      className="btn-brand">
                         START YOUR 14 DAY FREE TRIAL
                     </button>
-                </Grid>
-                <Grid item lg={6}>
-                    <Image src={gridData.imageURL} height="500px" width="700px" alt="header-image"></Image>
                 </Grid>
             </Grid>
         </div>

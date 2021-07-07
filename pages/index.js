@@ -4,6 +4,10 @@ import HeroImage from '../components/Homepage/HeroImage/HeroImage'
 import HeroSection from '../components/Homepage/HeroSection/HeroSection'
 import Navbar from '../components/Homepage/Navbar/Navbar'
 import OurTools from '../components/Homepage/OurTools/OurTools'
+import GridTwo from '../components/Homepage/GridTwo/GridTwo';
+import GridThree from '../components/Homepage/GridThree/GridThree'
+import GridFour from '../components/Homepage/GridFour/GridFour';
+import GridFive from '../components/Homepage/GridFive/SingleGridFive';
 
 export default function Home() {
   return (
@@ -20,6 +24,11 @@ export default function Home() {
       <HeroImage />
       <OurTools />
       <GridOne />
+      <GridTwo />
+      <GridThree />
+      <GridFour />
+      <GridThree />
+      <GridTwo />
     </div>
   )
 }
