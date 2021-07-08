@@ -61,3 +61,25 @@ a {
   background-color: rgb(243, 243, 252);
   padding: 40px;
 }
+.trial {
+  background-image: url(../public/banner_cta_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 70%;
+}
+.bg-container {
+  background-image: url(../public/testimonial_shape_1.svg);
+  position: relative;
+  top: -70px;
+  height: 300px;
+  box-shadow: 20px 10px 20px rgb(185, 184, 184);
+  border-radius: 10px;
+}
+.testimonial-text {
+  position: relative;
+  top: 30px;
+  padding: 20px;
+}
+.user-data {
+  margin-top: 50px;
+}

@@ -8,6 +8,11 @@ import GridTwo from '../components/Homepage/GridTwo/GridTwo';
 import GridThree from '../components/Homepage/GridThree/GridThree'
 import GridFour from '../components/Homepage/GridFour/GridFour';
 import GridFive from '../components/Homepage/GridFive/SingleGridFive';
+import CompleteSEO from '../components/Homepage/CompleteSEO/CompleteSEO';
+import Testimonials from '../components/Homepage/Testimonials/Testimonials';
+import CompanyStars from '../components/Homepage/CompanyStars/CompanyStars';
+import Footer from '../components/Homepage/Footer/Footer';
+
 
 export default function Home() {
   return (
@@ -29,6 +34,10 @@ export default function Home() {
       <GridFour />
       <GridThree />
       <GridTwo />
+      <CompleteSEO />
+      <Testimonials />
+      <CompanyStars />
+      <Footer />
     </div>
   )
 }
